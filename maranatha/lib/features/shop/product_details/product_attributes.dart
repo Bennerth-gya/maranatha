@@ -63,7 +63,7 @@ class MaranathaProductAttributes extends StatelessWidget {
                 children: const [
                   MaranathaSectionHeading(title: 'Colors'),
                   SizedBox(height: MaranathaSizes.spaceBtwItems / 2),
-                  MarathaChoiceChip(text: 'Green', selected: true),
+                  MarathaChoiceChip(text: 'Blue', selected: true),
                 ],
               ),
             ],
