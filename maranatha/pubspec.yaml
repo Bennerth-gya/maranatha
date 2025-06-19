@@ -1,0 +1,72 @@
+name: maranatha
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you plan to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  # The SDK range '>=3.7.2 <4.0.0' is acceptable.
+  # For more strict dependency management, you could use a caret range like '^3.7.2'.
+  sdk: '>=3.7.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Utility Packages
+  http: ^1.4.0
+  intl: ^0.20.2
+  logger: ^2.5.0
+  url_launcher: ^6.2.5
+  carousel_slider: ^5.0.0
+  flutter_native_splash: ^2.4.6
+  smooth_page_indicator: ^1.2.1
+
+  # Icons
+  iconsax: ^0.0.8
+  cupertino_icons: ^1.0.8
+  lottie: ^3.3.1
+
+  # State Management
+  get: ^4.7.2
+  get_storage: ^2.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # The flutter_lints version ^3.0.0 is correct and compatible.
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logos/
+    - assets/icons/brands/
+    - assets/images/on_boarding_images/
+    - assets/images/app-logo.jpg
+    - assets/images/google.png
+    # Removed duplicate entry for facebook-icon.png
+    - assets/images/facebook-icon.png
+    - assets/images/on_boarding_images/t-store.jpg
+    - assets/images/on_boarding_images/sammy-line-delivery.webp
+    - assets/images/on_boarding_images/sending-email.webp
+    - assets/images/on_boarding_images/sucess-celebration.jpg
+    - assets/icons/categories/
+    - assets/icons/categories/icons8-bowling1.png
+    - assets/images/banners/promo-banner-1.png
+    - assets/images/banners/promo-banner2.jpg
+    - assets/images/banners/promo-banner3.avif
+    - assets/images/banners/promo-banner4.jpeg
+    - assets/images/products/product-1.png
+    - assets/icons/categories/icons8-cosmetics-64.png
+    - assets/icons/categories/icons8-dining-chair-64.png
+    - assets/icons/categories/icons8-dog-heart-64.png
+    - assets/icons/categories/icons8-shoes-64.png
+    - assets/icons/categories/icons8-smartphone-64.png
+    - assets/icons/categories/icons8-sparkling-diamond-64.png
+    - assets/icons/categories/icons8-tailors-dummy-64.png
+    - assets/icons/categories/icons8-wooden-toy-car-50.png
+    - assets/images/user/user_icon.webp
+    - assets/images/products/ # Ensure this refers to the directory if you want all images within it
