@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maranatha/common/chips/choice_chips.dart';
+import 'package:maranatha/common/chips/choice_chips.dart'; // make sure this points to the updated file above
 import 'package:maranatha/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:maranatha/common/widgets/products_cart/Maranatha_Rounded_container.dart';
 import 'package:maranatha/common/widgets/texts/product_price_text.dart';
@@ -15,6 +15,7 @@ class MaranathaProductAttributes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = MaranathaHelperFunctions.isDarkMode(context);
+
     return Column(
       children: [
         MaranathaRoundedContainer(
@@ -60,10 +61,34 @@ class MaranathaProductAttributes extends StatelessWidget {
               ),
               const SizedBox(height: MaranathaSizes.spaceBtwItems),
               Column(
-                children: const [
+                children: [
                   MaranathaSectionHeading(title: 'Colors'),
                   SizedBox(height: MaranathaSizes.spaceBtwItems / 2),
-                  MarathaChoiceChip(text: 'Blue', selected: true),
+                  Wrap(
+                    spacing: 8,
+                    children: [
+                      MarathaChoiceChip(text: 'Green', selected: true, onSelected: (value) {}, color: Colors.green),
+                      MarathaChoiceChip(text: 'Blue', selected: false, onSelected: (value) {}, color: Colors.blue),
+                      MarathaChoiceChip(text: 'blue', selected: false, onSelected: (value) {}, color: Colors.yellow),
+                      MarathaChoiceChip(text: 'Green', selected: true, onSelected: (value) {}, color: Colors.green),
+                      MarathaChoiceChip(text: 'Blue', selected: false, onSelected: (value) {}, color: Colors.blue),
+                      MarathaChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {}, color: Colors.yellow),
+                      MarathaChoiceChip(text: 'Green', selected: true, onSelected: (value) {}, color: Colors.green),
+                      MarathaChoiceChip(text: 'Blue', selected: false, onSelected: (value) {}, color: Colors.blue),
+                      MarathaChoiceChip(text: 'Red', selected: false, onSelected: (value) {}, color: Colors.yellow),
+                    ],
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  MaranathaSectionHeading(title: 'Size'),
+                  SizedBox(height: MaranathaSizes.spaceBtwItems / 2),
+                  MarathaChoiceChip(text: 'EU 34', selected: true, onSelected: (value) {}, color: Colors.grey),
+                  const SizedBox(height: MaranathaSizes.spaceBtwItems),
+                  MarathaChoiceChip(text: 'EU 36', selected: false, onSelected: (value) {}, color: Colors.grey),
+                  const SizedBox(height: MaranathaSizes.spaceBtwItems),
+                  MarathaChoiceChip(text: 'EU 38', selected: false, onSelected: (value) {}, color: Colors.grey),
                 ],
               ),
             ],
