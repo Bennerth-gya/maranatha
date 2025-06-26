@@ -32,7 +32,10 @@ class MaranathaHelperFunctions{
       return Colors.brown;
     } else if (value == 'Teal'){
       return Colors.teal;
-    } else if (value == 'Indigo'){
+    } else if (value == 'Yellow'){
+      return Colors.yellow;
+    } 
+    else if (value == 'Indigo'){
       return Colors.indigo;
     } else {
       return null;

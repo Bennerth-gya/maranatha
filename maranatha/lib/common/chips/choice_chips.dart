@@ -8,7 +8,7 @@ class MarathaChoiceChip extends StatelessWidget {
     super.key,
     required this.text,
     required this.selected,
-    this.onSelected, required MaterialColor color, 
+    this.onSelected, required MaterialColor color,
   });
 
   final String text;
@@ -18,24 +18,27 @@ class MarathaChoiceChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isColor = MaranathaHelperFunctions.getColor(text) != null;
-    return ChoiceChip(
-      label: isColor ? const SizedBox() : Text(text),
-      selected: selected,
-      onSelected: onSelected,
-      labelStyle: TextStyle(color: selected ? MaranathaColors.white : null),
-      avatar: isColor
-          ? MaranathaCircularContainer(
-              width: 50,
-              height: 50,
-              backgroundColor: MaranathaHelperFunctions.getColor(text)!,
-            )
-          : null,
-      shape: isColor ? const CircleBorder() : null,
-      labelPadding: isColor ? const EdgeInsets.all(0) : null,
-      padding: isColor ? const EdgeInsets.all(0) : null,
-      backgroundColor: isColor
-          ? MaranathaHelperFunctions.getColor(text)!
-          : null,
+    return Theme(
+      data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+      child: ChoiceChip(
+        label: isColor ? const SizedBox() : Text(text),
+        selected: selected,
+        onSelected: onSelected,
+        labelStyle: TextStyle(color: selected ? MaranathaColors.white : null),
+        avatar: isColor
+            ? MaranathaCircularContainer(
+                width: 50,
+                height: 50,
+                backgroundColor: MaranathaHelperFunctions.getColor(text)!,
+              )
+            : null,
+        shape: isColor ? const CircleBorder() : null,
+        labelPadding: isColor ? const EdgeInsets.all(0) : null,
+        padding: isColor ? const EdgeInsets.all(0) : null,
+        backgroundColor: isColor
+            ? MaranathaHelperFunctions.getColor(text)!
+            : null,
+      ),
     );
   }
 }

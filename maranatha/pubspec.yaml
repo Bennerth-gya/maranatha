@@ -32,6 +32,10 @@ dependencies:
   get: ^4.7.2
   get_storage: ^2.1.1
 
+  # Product Specific
+  readmore: ^2.2.0
+  carousel_slider_x: ^6.0.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
