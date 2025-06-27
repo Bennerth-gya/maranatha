@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:maranatha/common/widgets/texts/section_heading.dart';
 import 'package:maranatha/features/shop/product_details/product_attributes.dart';
 import 'package:maranatha/features/shop/product_details/product_details_image_slider.dart';
 import 'package:maranatha/features/shop/product_details/product_meta_data.dart';
 import 'package:maranatha/features/shop/product_details/rating_share_widget.dart';
+import 'package:maranatha/features/shop/screens/product_review_screen.dart';
 import 'package:maranatha/features/shop/screens/store/widgets/brand_add_to_cart_widgets.dart';
 import 'package:maranatha/utils/constants/sizes.dart';
 import 'package:maranatha/utils/helpers/helper_function.dart';
@@ -85,7 +88,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       MaranathaSectionHeading(title: 'Reviews(199)', showActionButton: false,),
-                      IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right_3, size: 18,))
+                      IconButton(onPressed: () => Get.to(() => const MaranathaProductReviewScreen()), icon: const Icon(Iconsax.arrow_right_3, size: 18,))
                     ],
                   ),
                   const SizedBox(height: MaranathaSizes.spaceBtwSections,)
