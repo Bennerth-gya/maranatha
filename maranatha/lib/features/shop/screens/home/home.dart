@@ -3,7 +3,6 @@ import 'package:maranatha/common/widgets/appbar/appbar.dart';
 import 'package:maranatha/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:maranatha/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:maranatha/common/widgets/products_cart/layouts/grid_layout.dart';
-import 'package:maranatha/common/widgets/products_cart/product_cart_horizontal.dart';
 import 'package:maranatha/common/widgets/products_cart/product_cart_vertical.dart';
 import 'package:maranatha/common/widgets/texts/section_heading.dart';
 import 'package:maranatha/features/shop/screens/home/widgets/home_categories.dart';

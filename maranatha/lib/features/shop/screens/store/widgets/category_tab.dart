@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maranatha/common/widgets/brands/brand_show_case.dart';
 import 'package:maranatha/common/widgets/products_cart/layouts/grid_layout.dart';
-import 'package:maranatha/common/widgets/products_cart/product_cart_horizontal.dart';
 import 'package:maranatha/common/widgets/products_cart/product_cart_vertical.dart';
 import 'package:maranatha/common/widgets/texts/section_heading.dart';
 import 'package:maranatha/utils/constants/image_strings.dart';

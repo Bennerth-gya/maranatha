@@ -4,7 +4,6 @@ import 'package:iconsax/iconsax.dart';
 import 'package:maranatha/common/widgets/Icons/Maranatha_circular_icon.dart';
 import 'package:maranatha/common/widgets/appbar/appbar.dart';
 import 'package:maranatha/common/widgets/products_cart/layouts/grid_layout.dart';
-import 'package:maranatha/common/widgets/products_cart/product_cart_horizontal.dart';
 import 'package:maranatha/common/widgets/products_cart/product_cart_vertical.dart';
 import 'package:maranatha/features/shop/screens/home/home.dart';
 import 'package:maranatha/utils/constants/image_strings.dart';

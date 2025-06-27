@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:maranatha/common/chips/choice_chips.dart';
-import 'package:maranatha/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:maranatha/common/widgets/products_cart/Maranatha_Rounded_container.dart';
 import 'package:maranatha/common/widgets/texts/product_price_text.dart';
 import 'package:maranatha/common/widgets/texts/product_title_text.dart';
@@ -70,8 +69,8 @@ class MaranathaProductAttributes extends StatelessWidget {
                   Wrap(
                     spacing: 8,
                     children: [
-                      MarathaChoiceChip(text: 'Green', selected: true, onSelected: (value) {}, color: Colors.green),
-                      MarathaChoiceChip(text: 'Blue', selected: false, onSelected: (value) {}, color: Colors.blue),
+                      MarathaChoiceChip(text: 'Green', selected: false, onSelected: (value) {}, color: Colors.green),
+                      MarathaChoiceChip(text: 'Blue', selected: true, onSelected: (value) {}, color: Colors.blue),
                       MarathaChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {}, color: Colors.yellow),
                      // MarathaChoiceChip(text: 'Green', selected: true, onSelected: (value) {}, color: Colors.green),
                      // MarathaChoiceChip(text: 'Blue', selected: false, onSelected: (value) {}, color: Colors.blue),
