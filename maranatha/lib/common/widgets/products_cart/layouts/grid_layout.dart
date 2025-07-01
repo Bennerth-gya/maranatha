@@ -15,18 +15,25 @@ class MaranathaGridLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    int crossAxisCount = 2;
+    if (screenWidth >= 1200) {
+      crossAxisCount = 6;
+    } else if (screenWidth >= 900) {
+      crossAxisCount = 4;
+    }
     return GridView.builder(
       shrinkWrap: true,
       itemCount: itemCount,
       padding: EdgeInsets.zero,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+        crossAxisCount: crossAxisCount,
         mainAxisExtent: mainAxisExtent,
         mainAxisSpacing: MaranathaSizes.gridViewSpacing,
         crossAxisSpacing: MaranathaSizes.gridViewSpacing,
-        ), 
-        itemBuilder: itemBuilder
-        );
+      ),
+      itemBuilder: itemBuilder,
+    );
   }
 }

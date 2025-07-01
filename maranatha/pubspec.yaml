@@ -6,8 +6,7 @@ publish_to: 'none' # Remove this line if you plan to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  # The SDK range '>=3.7.2 <4.0.0' is acceptable.
-  # For more strict dependency management, you could use a caret range like '^3.7.2'.
+  # Adjusted SDK range to be compatible with current Flutter version
   sdk: '>=3.7.2 <4.0.0'
 
 dependencies:
@@ -16,7 +15,7 @@ dependencies:
 
   # Utility Packages
   http: ^1.4.0
-  intl: ^0.20.2
+  intl: 0.19.0
   logger: ^2.5.0
   url_launcher: ^6.2.5
   carousel_slider: ^5.0.0
@@ -26,6 +25,7 @@ dependencies:
   # Icons
   iconsax: ^0.0.8
   cupertino_icons: ^1.0.8
+  device_preview_plus: ^2.3.0
   lottie: ^3.3.1
 
   # State Management
@@ -49,29 +49,11 @@ flutter:
   assets:
     - assets/logos/
     - assets/icons/brands/
+    - assets/icons/categories/
     - assets/images/on_boarding_images/
     - assets/images/app-logo.jpg
     - assets/images/google.png
-    # Removed duplicate entry for facebook-icon.png
     - assets/images/facebook-icon.png
-    - assets/images/on_boarding_images/t-store.jpg
-    - assets/images/on_boarding_images/sammy-line-delivery.webp
-    - assets/images/on_boarding_images/sending-email.webp
-    - assets/images/on_boarding_images/sucess-celebration.jpg
-    - assets/icons/categories/
-    - assets/icons/categories/icons8-bowling1.png
-    - assets/images/banners/promo-banner-1.png
-    - assets/images/banners/promo-banner2.jpg
-    - assets/images/banners/promo-banner3.avif
-    - assets/images/banners/promo-banner4.jpeg
-    - assets/images/products/product-1.png
-    - assets/icons/categories/icons8-cosmetics-64.png
-    - assets/icons/categories/icons8-dining-chair-64.png
-    - assets/icons/categories/icons8-dog-heart-64.png
-    - assets/icons/categories/icons8-shoes-64.png
-    - assets/icons/categories/icons8-smartphone-64.png
-    - assets/icons/categories/icons8-sparkling-diamond-64.png
-    - assets/icons/categories/icons8-tailors-dummy-64.png
-    - assets/icons/categories/icons8-wooden-toy-car-50.png
-    - assets/images/user/user_icon.webp
-    - assets/images/products/ # Ensure this refers to the directory if you want all images within it
+    - assets/images/user/
+    - assets/images/banners/
+    - assets/images/products/

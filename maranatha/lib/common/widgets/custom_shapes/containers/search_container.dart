@@ -44,13 +44,15 @@ class MaranathaSearchContainer extends StatelessWidget {
           ),
           child: Row(
             children: [
-              const Icon(Iconsax.search_normal, color: MaranathaColors.black,),
+              Icon(
+                Iconsax.search_normal,
+                color: Theme.of(context).iconTheme.color,
+              ),
               const SizedBox(width: MaranathaSizes.spaceBtwItems,),
               Text(
                 'Search in store',
-                 
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(color: MaranathaColors.dark),
-                )
+                style: Theme.of(context).textTheme.bodySmall,
+              )
             ],
           ),
         ),

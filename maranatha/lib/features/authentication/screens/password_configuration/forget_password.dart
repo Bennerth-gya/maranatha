@@ -4,12 +4,15 @@ import 'package:iconsax/iconsax.dart';
 import 'package:maranatha/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:maranatha/utils/constants/sizes.dart';
 import 'package:maranatha/utils/constants/text_strings.dart';
+import 'package:maranatha/utils/helpers/helper_function.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = MaranathaHelperFunctions.isDarkMode(context);
+    
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -38,19 +41,17 @@ class ForgetPassword extends StatelessWidget {
             ),
             const SizedBox(height: MaranathaSizes.spaceBtwSections),
 
-            // Submit Button with blue background
+            // Submit Button with theme-aware colors
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.off(() => const ResetPassword()),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue, // Blue background
+                  backgroundColor: isDark ? Colors.white : Colors.blue,
+                  foregroundColor: isDark ? Colors.black : Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                 ),
-                child: const Text(
-                  'Submit',
-                  style: TextStyle(color: Colors.white), // White text
-                ),
+                child: const Text('Submit'),
               ),
             ),
           ],

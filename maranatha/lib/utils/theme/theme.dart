@@ -26,6 +26,7 @@ class MaranathaAppTheme {
     outlinedButtonTheme: MaranathaOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: MaranathaTextFieldTheme.lightInputDecorationTheme
   );
+  
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
@@ -33,7 +34,7 @@ class MaranathaAppTheme {
     primaryColor: Colors.blue,
     textTheme: MaranathaTextTheme.darkTextTheme,
     chipTheme: MaranathaChipTheme.darkChipTheme,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: Colors.black,
     appBarTheme: MaranathaAppBarTheme.darkAppBarTheme,
     checkboxTheme: MaranathaCheckboxTheme.lightCheckboxTheme,
     bottomSheetTheme: MaranathaBottonSheetTheme.darkBottomSheetTheme,

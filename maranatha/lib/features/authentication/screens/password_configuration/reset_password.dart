@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:maranatha/features/authentication/screens/login/login.dart';
 import 'package:maranatha/utils/constants/image_strings.dart';
 import 'package:maranatha/utils/constants/sizes.dart';
 import 'package:maranatha/utils/constants/text_strings.dart';
@@ -11,14 +13,15 @@ class ResetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = MaranathaHelperFunctions.isDarkMode(context);
+    
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () => Get.back(),
-            icon: const Icon(CupertinoIcons.clear),
-          )
+              onPressed: () => Get.offAll(() => const LoginScreen()),
+              icon: const Icon(Iconsax.close_square))
         ],
       ),
       body: SingleChildScrollView(
@@ -46,29 +49,32 @@ class ResetPassword extends StatelessWidget {
               ),
               const SizedBox(height: MaranathaSizes.spaceBtwItems),
 
-              // "Done" Button with blue background
+              // "Done" Button with theme-aware colors
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.offAll(() => const LoginScreen()),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue, // Blue background
+                    backgroundColor: isDark ? Colors.white : Colors.blue,
+                    foregroundColor: isDark ? Colors.black : Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                   ),
-                  child: const Text(
-                    'Done',
-                    style: TextStyle(color: Colors.white), // White text
-                  ),
+                  child: const Text('Done'),
                 ),
               ),
               const SizedBox(height: MaranathaSizes.spaceBtwInputFields),
 
-              // "Resend Email" TextButton
+              // "Resend Email" TextButton with theme-aware colors
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text('Resend Email'),
+                  child: Text(
+                    'Resend Email',
+                    style: TextStyle(
+                      color: isDark ? Colors.white : Colors.black,
+                    ),
+                  ),
                 ),
               ),
             ],

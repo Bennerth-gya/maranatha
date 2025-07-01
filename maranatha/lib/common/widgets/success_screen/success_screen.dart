@@ -4,6 +4,7 @@ import 'package:maranatha/utils/constants/image_strings.dart';
 import 'package:maranatha/utils/constants/sizes.dart';
 import 'package:maranatha/utils/constants/text_strings.dart';
 import 'package:maranatha/utils/helpers/helper_function.dart';
+import 'package:maranatha/utils/constants/colors.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key, required this.image, required this.title, required this.subTitle, required this.onPressed});
@@ -13,6 +14,8 @@ class SuccessScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = MaranathaHelperFunctions.isDarkMode(context);
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -33,13 +36,14 @@ class SuccessScreen extends StatelessWidget {
               Text(MaranathaTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,),
               const SizedBox(height: MaranathaSizes.spaceBtwItems,),
 
-              //Button
+              //Button with theme-aware colors
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: onPressed,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue, // Set the background color to blue
+                    backgroundColor: isDark ? Colors.white : Colors.blue,
+                    foregroundColor: isDark ? Colors.black : Colors.white,
                   ),
                   child: const Text('Continue'),
                 ),

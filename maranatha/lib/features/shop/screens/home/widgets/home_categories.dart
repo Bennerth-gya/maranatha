@@ -10,19 +10,49 @@ class MaranathaHomeCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: 6,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (_, index){
-          return MaranathaVerticalImageText(
-            title: 'Shoes',
-            onTap: (){}, image: MaranathaImages.darkAppLogo, textColor: Colors.white24,
-          );
-        },
+    final screenWidth = MediaQuery.of(context).size.width;
+    if (screenWidth < 900) {
+      // Mobile: horizontal list
+      return SizedBox(
+        height: 80,
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: 6,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (_, index) {
+            return MaranathaVerticalImageText(
+              title: 'Shoes',
+              onTap: () {},
+              image: MaranathaImages.darkAppLogo,
+              textColor: Colors.white24,
+            );
+          },
         ),
-    );
+      );
+    } else {
+      // Tablet/Desktop: grid
+      int crossAxisCount = screenWidth >= 1200 ? 6 : 4;
+      return SizedBox(
+        height: 120,
+        child: GridView.builder(
+          shrinkWrap: true,
+          itemCount: 6,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            mainAxisSpacing: 8,
+            crossAxisSpacing: 8,
+            childAspectRatio: 1.2,
+          ),
+          itemBuilder: (_, index) {
+            return MaranathaVerticalImageText(
+              title: 'Shoes',
+              onTap: () {},
+              image: MaranathaImages.darkAppLogo,
+              textColor: Colors.white24,
+            );
+          },
+        ),
+      );
+    }
   }
 }

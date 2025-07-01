@@ -76,6 +76,16 @@ class MaranathaHelperFunctions {
     return Theme.of(context).brightness == Brightness.dark;
   }
 
+  static Color getTextColor(BuildContext context) {
+    return isDarkMode(context) ? Colors.white : Colors.black;
+  }
+
+  static Color getTextColorWithOpacity(BuildContext context, double opacity) {
+    return isDarkMode(context) 
+        ? Colors.white.withOpacity(opacity) 
+        : Colors.black.withOpacity(opacity);
+  }
+
   static Size screenSize() {
     return MediaQuery.of(Get.context!).size;
   }

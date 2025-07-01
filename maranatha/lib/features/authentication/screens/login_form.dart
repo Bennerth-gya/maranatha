@@ -6,12 +6,15 @@ import 'package:maranatha/features/authentication/screens/signup%20widget/signup
 import 'package:maranatha/navigation_menu.dart';
 import 'package:maranatha/utils/constants/sizes.dart';
 import 'package:maranatha/utils/constants/text_strings.dart';
+import 'package:maranatha/utils/helpers/helper_function.dart';
 
 class MaranathaLoginForm extends StatelessWidget {
   const MaranathaLoginForm({super.key, required bool dark});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = MaranathaHelperFunctions.isDarkMode(context);
+    
     return Form(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: MaranathaSizes.spaceBtwSections),
@@ -58,33 +61,34 @@ class MaranathaLoginForm extends StatelessWidget {
             ),
             const SizedBox(height: MaranathaSizes.spaceBtwSections),
 
-            // Sign In Button with blue background
+            // Sign In Button with theme-aware colors
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.to(const NavigationMenu()),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue, // Blue background
+                  backgroundColor: isDark ? Colors.white : Colors.blue,
+                  foregroundColor: isDark ? Colors.black : Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                 ),
-                child: const Text(
-                  MaranathaTexts.signIn,
-                  style: TextStyle(color: Colors.white), // White text
-                ),
+                child: const Text(MaranathaTexts.signIn),
               ),
             ),
 
             const SizedBox(height: MaranathaSizes.spaceBtwItems),
 
-            // Create Account Button
+            // Create Account Button with theme-aware colors
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () => Get.to(() => const signupScreen()),
-                child: const Text(
-                  MaranathaTexts.createAccount,
-                  style: TextStyle(color: Colors.black),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: isDark ? Colors.white : Colors.black,
+                  side: BorderSide(
+                    color: isDark ? Colors.white : Colors.black,
+                  ),
                 ),
+                child: const Text(MaranathaTexts.createAccount),
               ),
             ),
 

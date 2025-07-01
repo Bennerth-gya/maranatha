@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:maranatha/features/authentication/screens/signup%20widget/verify_email.dart';
 import 'package:maranatha/utils/constants/sizes.dart';
 import 'package:maranatha/utils/constants/text_strings.dart';
+import 'package:maranatha/utils/helpers/helper_function.dart';
 
 class MaranathaSignUpForm extends StatelessWidget {
   const MaranathaSignUpForm({
@@ -15,6 +16,8 @@ class MaranathaSignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = MaranathaHelperFunctions.isDarkMode(context);
+    
     return Form(
       child: Column(
         children: [
@@ -124,14 +127,14 @@ class MaranathaSignUpForm extends StatelessWidget {
           ),
           const SizedBox(height: MaranathaSizes.spaceBtwInputFields),
 
-          // Sign Up Button with blue background
+          // Sign Up Button with theme-aware colors
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () => Get.to(() => const verifyEmailScreen()),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.white,
+                backgroundColor: isDark ? Colors.white : Colors.blue,
+                foregroundColor: isDark ? Colors.black : Colors.white,
               ),
               child: const Text(MaranathaTexts.createAccount),
             ),

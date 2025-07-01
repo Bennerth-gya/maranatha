@@ -13,6 +13,8 @@ class verifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = MaranathaHelperFunctions.isDarkMode(context);
+    
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -63,7 +65,7 @@ class verifyEmailScreen extends StatelessWidget {
               const SizedBox(
                 height: MaranathaSizes.spaceBtwItems,
               ),
-              // Buttons
+              // Buttons with theme-aware colors
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -74,8 +76,8 @@ class verifyEmailScreen extends StatelessWidget {
                         onPressed: () => Get.to(() => const LoginScreen()),
                       )),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
+                    backgroundColor: isDark ? Colors.white : Colors.blue,
+                    foregroundColor: isDark ? Colors.black : Colors.white,
                   ),
                   child: const Text('continue'),
                 ),
@@ -86,7 +88,15 @@ class verifyEmailScreen extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                      onPressed: () {}, child: const Text(MaranathaTexts.resendEmail)))
+                      onPressed: () {}, 
+                      child: Text(
+                        MaranathaTexts.resendEmail,
+                        style: TextStyle(
+                          color: isDark ? Colors.white : Colors.black,
+                        ),
+                      ),
+                  ),
+              ),
             ],
           ),
         ),
