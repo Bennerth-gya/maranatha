@@ -22,12 +22,21 @@ class MaranathaProductCartVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = MaranathaHelperFunctions.isDarkMode(context);
-
+    final screenWidth = MediaQuery.of(context).size.width;
+    double cardWidth = 180;
+    double imageHeight = 180;
+    if (screenWidth >= 1200) {
+      cardWidth = 260;
+      imageHeight = 260;
+    } else if (screenWidth >= 900) {
+      cardWidth = 220;
+      imageHeight = 220;
+    }
     //<<--------Container with size padding, color, edges, radius and shadow--------->>
     return GestureDetector(
       onTap: () => Get.to(() =>const ProductDetailsScreen() ),
       child: Container(
-        width: 180,
+        width: cardWidth,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [MaranathaShadowStyle.verticalProductShadow],
@@ -38,7 +47,7 @@ class MaranathaProductCartVertical extends StatelessWidget {
           children: [
             //<<---------Thumbnail, Wishlist Button, Discount Tag----------->>
             MaranathaRoundedContainer(
-              height: 180,
+              height: imageHeight,
               padding: const EdgeInsets.all(MaranathaSizes.sm),
               backgroundColor: dark ? MaranathaColors.dark : MaranathaColors.light,
               child: Stack(
